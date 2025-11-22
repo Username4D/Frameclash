@@ -25,6 +25,8 @@ func _physics_process(delta):
 		self.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
+	var own_pos = get_viewport().get_camera_3d().unproject_position(self.get_parent().position)
+	self.get_parent().get_node("Label").position = own_pos - Vector2(64,64)
 
 func _on_velocity_computed(safe_velocity: Vector3):
 	self.get_parent().velocity = safe_velocity
