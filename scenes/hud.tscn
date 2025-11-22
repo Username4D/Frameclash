@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://23mstw1aagns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toqtt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahhtf"]
+bg_color = Color(0.98, 0.35933334, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_toqtt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahhtf"]
+font_size = 52
+
+[node name="hud" type="Node2D"]
+
+[node name="wave_bar" type="Node2D" parent="."]
+position = Vector2(0, -24)
+
+[node name="Polygon2D6" type="Polygon2D" parent="wave_bar"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 40, 64, 104, 184, 96, 1064, 104, 1120, 104, 1144, 40)
+
+[node name="Polygon2D5" type="Polygon2D" parent="wave_bar"]
+polygon = PackedVector2Array(48, 32, 120, 104, 528, 80, 1080, 112, 1112, 32, 264, 56)
+
+[node name="ProgressBar" type="ProgressBar" parent="wave_bar"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 80.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_toqtt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ahhtf")
+value = 23.54
+show_percentage = false
+
+[node name="live_display" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="live_display"]
+position = Vector2(56, 56)
+polygon = PackedVector2Array(960, 672, 800, 496, 984, 528, 880, 280, 1264, 448, 1192, 688)
+
+[node name="Polygon2D2" type="Polygon2D" parent="live_display"]
+position = Vector2(208, 200)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(960, 672, 800, 496, 984, 528, 880, 280, 1264, 448, 1192, 688)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="live_display"]
+self_modulate = Color(0.9153351, 0.48966444, 1.1551381e-06, 1)
+position = Vector2(1016, 528)
+scale = Vector2(144.16336, 143.99997)
+mesh = SubResource("SphereMesh_toqtt")
+
+[node name="Label" type="Label" parent="live_display"]
+offset_left = 936.0
+offset_top = 456.0
+offset_right = 1016.0
+offset_bottom = 600.0
+text = "12"
+label_settings = SubResource("LabelSettings_ahhtf")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Polygon2D4" type="Polygon2D" parent="live_display"]
+position = Vector2(24, 56)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1024, 496, 1016, 488, 1016, 488, 1000, 472, 1016, 456, 1024, 464, 1032, 456, 1048, 472)
+
+[node name="Polygon2D3" type="Polygon2D" parent="live_display"]
+position = Vector2(24, 48)
+polygon = PackedVector2Array(1024, 496, 1015.5242, 487.52423, 1000, 472, 1016, 456, 1024, 464, 1032, 456, 1048, 472)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(48, -32)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+position = Vector2(80, -32)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D7" type="Polygon2D" parent="."]
+position = Vector2(112, -32)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D8" type="Polygon2D" parent="."]
+position = Vector2(144, -32)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(40, -32)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(72, -32)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(104, -32)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(136, -32)
+polygon = PackedVector2Array(24, 584, 40, 632, 56, 632, 40, 584)

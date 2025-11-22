@@ -24,6 +24,10 @@ func _physics_process(delta):
 		$"../death_particles".emitting = true
 		self.get_parent().velocity = Vector3(4, 5, 0).rotated(Vector3(0,1,0), randf_range(-PI, PI))
 		self.get_parent().move_and_slide()
+		$"..".set_collision_layer_value(2, true)
+		$"..".set_collision_layer_value(1, false)
+		$"..".set_collision_mask_value(2, true)
+		$"..".set_collision_mask_value(1, false)
 	if health == -1:
 		self.get_parent().velocity.y -= 0.2
 		self.get_parent().move_and_slide()
