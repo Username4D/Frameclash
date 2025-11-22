@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwnj7o6j5hhaf"]
+[gd_scene load_steps=5 format=3 uid="uid://dwnj7o6j5hhaf"]
 
 [ext_resource type="Script" uid="uid://2jj281qokec6" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://s25bbc20wy75" path="res://scenes/bullet.tscn" id="2_g2els"]
-[ext_resource type="Texture2D" uid="uid://byoim7vom3x8w" path="res://icon.svg" id="3_qhqgy"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_u8vuu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
-albedo_texture = ExtResource("3_qhqgy")
+[ext_resource type="PackedScene" uid="uid://dnt8jx63id2k1" path="res://assets/player.glb" id="3_qhqgy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
 
@@ -15,12 +10,11 @@ albedo_texture = ExtResource("3_qhqgy")
 script = ExtResource("1_3vyb7")
 bullet = ExtResource("2_g2els")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_u8vuu")
-surface_material_override/0 = SubResource("StandardMaterial3D_dqkch")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5, 2)
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("3_qhqgy")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)

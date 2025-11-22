@@ -1,35 +1,35 @@
-extends CharacterBody3D
+extends NavigationAgent3D
 
 @export var movement_speed: float = 0.75
-@onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+
 
 func _ready() -> void:
-	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	self.velocity_computed.connect(Callable(_on_velocity_computed))
 	update_position()
 
 func set_movement_target(movement_target: Vector3):
-	navigation_agent.set_target_position(movement_target)
+	self.set_target_position(movement_target)
 
 func _physics_process(delta):
 	# Do not query when the map has never synchronized and is empty.
-	if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+	if NavigationServer3D.map_get_iteration_id(self.get_navigation_map()) == 0:
 		return
-	if navigation_agent.is_navigation_finished():
+	if self.is_navigation_finished():
 		return
 
-	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-	var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
-	if navigation_agent.avoidance_enabled:
-		navigation_agent.set_velocity(new_velocity)
+	var next_path_position: Vector3 = self.get_next_path_position()
+	var new_velocity: Vector3 = self.get_parent().global_position.direction_to(next_path_position) * movement_speed
+	if self.avoidance_enabled:
+		self.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
 
 func _on_velocity_computed(safe_velocity: Vector3):
-	velocity = safe_velocity
-	move_and_slide()
+	self.get_parent().velocity = safe_velocity
+	self.get_parent().move_and_slide()
 	
 func update_position():
-	if self.get_parent().get_parent().get_node("player"):
-		set_movement_target(self.get_parent().get_parent().get_node("player").global_position)
-		print(self.get_parent().get_parent().get_node("player").global_position)
+	if self.get_parent().get_parent().get_parent().get_node("player"):
+		set_movement_target(self.get_parent().get_parent().get_parent().get_node("player").global_position)
+
 	get_tree().create_timer(0.1).timeout.connect(update_position)
