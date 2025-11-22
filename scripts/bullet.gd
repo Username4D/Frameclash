@@ -7,7 +7,9 @@ func _physics_process(delta: float) -> void:
 	self.position += Vector3(0.0,0.0,speed).rotated(Vector3(0,1,0),self.rotation.y)
 
 func _on_body_entered(body: Node3D) -> void:
+	print("player")
 	if enemy and body.is_in_group("player"):
+		
 		if body.health > 0:
 			body.health -= 1
 		self.queue_free()

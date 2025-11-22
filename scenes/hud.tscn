@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://23mstw1aagns"]
+[gd_scene load_steps=6 format=3 uid="uid://23mstw1aagns"]
+
+[ext_resource type="Script" uid="uid://bjacrege5mstk" path="res://scenes/hud.gd" id="1_ahhtf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toqtt"]
 
@@ -11,6 +13,7 @@ bg_color = Color(0.98, 0.35933334, 0, 1)
 font_size = 52
 
 [node name="hud" type="Node2D"]
+script = ExtResource("1_ahhtf")
 
 [node name="wave_bar" type="Node2D" parent="."]
 position = Vector2(0, -24)

@@ -10,6 +10,7 @@ size = Vector3(0.2, 0.2, 0.4)
 
 [node name="bullet" type="Area3D"]
 script = ExtResource("1_myi65")
+enemy = true
 speed = 0.025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -17,3 +18,5 @@ shape = SubResource("BoxShape3D_myi65")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_gl8o3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
