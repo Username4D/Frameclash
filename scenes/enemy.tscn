@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm0lcqjq0augx"]
+[gd_scene load_steps=7 format=3 uid="uid://bm0lcqjq0augx"]
 
 [ext_resource type="Script" uid="uid://bjrfttjtgja7r" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
@@ -24,7 +24,14 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 anti_aliasing = false
 
-[node name="enemy" type="CharacterBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p1mj"]
+transparency = 1
+albedo_color = Color(0.3137255, 0.13725491, 0.03137255, 0.23529412)
+
+[sub_resource type="SphereMesh" id="SphereMesh_md0e3"]
+material = SubResource("StandardMaterial3D_7p1mj")
+
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8tegq")
@@ -43,3 +50,15 @@ theme_override_styles/background = SubResource("StyleBoxFlat_7p1mj")
 theme_override_styles/fill = SubResource("StyleBoxFlat_md0e3")
 value = 41.35
 show_percentage = false
+
+[node name="death_particles" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_md0e3")
+direction = Vector3(0, 2, 0)
+spread = 180.0
+gravity = Vector3(0, -2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0

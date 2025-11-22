@@ -10,10 +10,11 @@ size = Vector3(0.1, 0.1, 0.4)
 
 [node name="bullet" type="Area3D"]
 script = ExtResource("1_mkf8s")
-bullet_speed = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_h1aey")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_mkf8s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="Frameclash"
+run/main_scene="uid://crnc3h3kury05"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdterm/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+enemy=""
+player=""
 
 [input]
 
