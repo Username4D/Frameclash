@@ -53,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_syn64")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 navigation_mesh = SubResource("NavigationMesh_8k0nb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -62,5 +63,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_agamo")
 
 [node name="enemies" type="Node3D" parent="."]
 
-[node name="enemy" parent="." instance=ExtResource("3_v87wf")]
+[node name="enemy" parent="enemies" instance=ExtResource("3_v87wf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11)

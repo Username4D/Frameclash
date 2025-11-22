@@ -16,4 +16,3 @@ shape = SubResource("BoxShape3D_8tegq")
 mesh = SubResource("BoxMesh_7p1mj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_postprocessing = 1

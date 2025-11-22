@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
-@export var movement_speed: float = 4.0
+@export var movement_speed: float = 0.75
 @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 
 func _ready() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	update_position()
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
@@ -28,5 +29,7 @@ func _on_velocity_computed(safe_velocity: Vector3):
 	move_and_slide()
 	
 func update_position():
-	set_movement_target(self.get_parent().get_parent().get_node("player").position)
+	if self.get_parent().get_parent().get_node("player"):
+		set_movement_target(self.get_parent().get_parent().get_node("player").global_position)
+		print(self.get_parent().get_parent().get_node("player").global_position)
 	get_tree().create_timer(0.1).timeout.connect(update_position)
