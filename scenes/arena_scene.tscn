@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://crnc3h3kury05"]
+[gd_scene load_steps=12 format=3 uid="uid://crnc3h3kury05"]
 
 [ext_resource type="PackedScene" uid="uid://dwnj7o6j5hhaf" path="res://scenes/player.tscn" id="1_f05c1"]
 [ext_resource type="Texture2D" uid="uid://byoim7vom3x8w" path="res://icon.svg" id="2_v87wf"]
 [ext_resource type="PackedScene" uid="uid://bm0lcqjq0augx" path="res://scenes/enemy.tscn" id="3_v87wf"]
+[ext_resource type="PackedScene" uid="uid://cxurx5g14168l" path="res://scenes/roller.tscn" id="4_8k0nb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8k0nb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,3 +66,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_agamo")
 
 [node name="enemy" parent="enemies" instance=ExtResource("3_v87wf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11)
+
+[node name="roller" parent="enemies" instance=ExtResource("4_8k0nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)

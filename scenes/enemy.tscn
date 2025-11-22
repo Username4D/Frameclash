@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm0lcqjq0augx"]
+[gd_scene load_steps=3 format=3 uid="uid://bm0lcqjq0augx"]
 
 [ext_resource type="Script" uid="uid://bjrfttjtgja7r" path="res://scripts/enemy.gd" id="1_7p1mj"]
-[ext_resource type="PackedScene" uid="uid://dlxvqnp825tmk" path="res://assets/roller.glb" id="2_md0e3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8tegq"]
 
@@ -13,5 +12,5 @@ shape = SubResource("BoxShape3D_8tegq")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 script = ExtResource("1_7p1mj")
 
-[node name="roller" parent="." instance=ExtResource("2_md0e3")]
+[node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)

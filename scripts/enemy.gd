@@ -11,6 +11,8 @@ func set_movement_target(movement_target: Vector3):
 	self.set_target_position(movement_target)
 
 func _physics_process(delta):
+	if self.get_parent().get_parent().get_parent().get_node("player"):
+		self.get_parent().get_node("Mesh").look_at(self.get_parent().get_parent().get_parent().get_node("player").position)
 	# Do not query when the map has never synchronized and is empty.
 	if NavigationServer3D.map_get_iteration_id(self.get_navigation_map()) == 0:
 		return
