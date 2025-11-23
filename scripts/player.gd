@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 			var target_rotation = direction.angle()# - 0.5 * PI
 			$MeshInstance3D.rotation.y = lerp_angle($MeshInstance3D.rotation.y, target_rotation, 0.1)
 	elif health == 0:
+		self.get_parent().add_child(load("res://scenes/deathscreen.tscn").instantiate())
 		health = -1
 		$death_particles.emitting = true
 		self.velocity = Vector3(1, 4, 0).rotated(Vector3(0,1,0), randf_range(-PI, PI))
