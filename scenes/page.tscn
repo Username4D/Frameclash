@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvb3jtscckqy8"]
+
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_1g3qv"]
+[ext_resource type="Script" uid="uid://bctg1nb6fw0eu" path="res://scripts/page.gd" id="2_6ni5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lufvv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkqxg"]
+bg_color = Color(0.96862745, 0.56078434, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g3qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ni5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5g3ik"]
+
+[node name="page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 488.0
+offset_right = 352.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("1_1g3qv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+text = "Back"
+script = ExtResource("2_6ni5k")

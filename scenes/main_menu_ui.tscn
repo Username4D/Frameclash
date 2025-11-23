@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://m75qqhuatd0u"]
+
+[ext_resource type="PackedScene" uid="uid://dvb3jtscckqy8" path="res://scenes/page.tscn" id="1_rayio"]
+
+[node name="main_menu_ui" type="Node2D"]
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-48, 24)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1216, 24, 616, 72, 736, 128, 608, 272, 680, 280, 640, 608, 1240, 624)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-56, -8)
+polygon = PackedVector2Array(1216, 24, 616, 72, 736, 128, 608, 272, 680, 280, 640, 608, 1240, 624)
+
+[node name="page" parent="." instance=ExtResource("1_rayio")]
+offset_left = 640.0
+offset_right = 640.0
