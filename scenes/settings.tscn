@@ -42,8 +42,6 @@ offset_left = 104.0
 offset_top = 224.0
 offset_right = -408.0
 offset_bottom = -360.0
-init = null
-state = null
 setting = "vsync"
 
 [node name="PARTICLES" parent="." index="3" instance=ExtResource("3_6wm04")]
@@ -52,6 +50,5 @@ offset_left = 104.0
 offset_top = 288.0
 offset_right = -408.0
 offset_bottom = -296.0
-init = null
 state = false
 setting = "particles"

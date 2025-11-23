@@ -15,6 +15,6 @@ func _on_body_entered(body: Node3D) -> void:
 		self.queue_free()
 	if not enemy and body.is_in_group("enemy"):
 		if body.get_node("NavigationAgent3D").health > 0:
-			body.get_node("NavigationAgent3D").health -= 1
+			body.get_node("NavigationAgent3D").health -= ceili(save_handler.damage_upgrades / 2)
 		self.queue_free()
 	

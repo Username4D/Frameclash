@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		can_fire = false
 		nbullet.rotation = $MeshInstance3D.rotation  + Vector3(0,0.5 * PI, 0)
 		self.get_parent().add_child(nbullet)
-		get_tree().create_timer(firerate, true, true).timeout.connect(enable)
+		get_tree().create_timer(firerate - 0.014 * save_handler.firerate_upgrades, true, true).timeout.connect(enable)
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shooting = true
