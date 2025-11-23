@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://crnc3h3kury05"]
+[gd_scene load_steps=17 format=3 uid="uid://crnc3h3kury05"]
 
 [ext_resource type="PackedScene" uid="uid://dwnj7o6j5hhaf" path="res://scenes/player.tscn" id="1_f05c1"]
+[ext_resource type="Script" uid="uid://do2aoi6dkeio4" path="res://scripts/arena_scene.gd" id="1_rhqdc"]
 [ext_resource type="Texture2D" uid="uid://byoim7vom3x8w" path="res://icon.svg" id="2_v87wf"]
-[ext_resource type="PackedScene" uid="uid://cxurx5g14168l" path="res://scenes/roller.tscn" id="4_8k0nb"]
-[ext_resource type="PackedScene" uid="uid://c7dll3opvsjw4" path="res://scenes/tanker.tscn" id="4_bt4xr"]
-[ext_resource type="PackedScene" uid="uid://b28jk27ltrtq6" path="res://scenes/soldier.tscn" id="5_bt4xr"]
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="7_agamo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8k0nb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,8 +24,18 @@ albedo_color = Color(0.62967473, 0.62967485, 0.62967455, 1)
 material = SubResource("StandardMaterial3D_8k0nb")
 size = Vector3(35, 1, 35)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_syn64"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8k0nb"]
 size = Vector3(35, 1, 35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt4xr"]
+albedo_color = Color(1, 0.5146846, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2mhd3"]
+material = SubResource("StandardMaterial3D_bt4xr")
+size = Vector3(2, 4, 39)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syn64"]
+size = Vector3(2, 4, 39)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8k0nb"]
 vertices = PackedVector3Array(-17, 1, -17, -17, 1, 17, 17, 1, 17, 17, 1, -17)
@@ -36,7 +45,13 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 albedo_texture = ExtResource("2_v87wf")
 uv1_scale = Vector3(175.27, 175.27, 175.27)
 
+[sub_resource type="LabelSettings" id="LabelSettings_syn64"]
+font = ExtResource("7_agamo")
+font_size = 46
+font_color = Color(1, 0.40739924, 0, 1)
+
 [node name="arena_scene" type="Node3D"]
+script = ExtResource("1_rhqdc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2mhd3")
@@ -58,6 +73,42 @@ mesh = SubResource("BoxMesh_rhqdc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_8k0nb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, -1, 0)
+mesh = SubResource("BoxMesh_2mhd3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, 18.5)
+mesh = SubResource("BoxMesh_2mhd3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, -18.5)
+mesh = SubResource("BoxMesh_2mhd3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1, 0)
+mesh = SubResource("BoxMesh_2mhd3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1, 0)
+shape = SubResource("BoxShape3D_syn64")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, -1, 0)
+shape = SubResource("BoxShape3D_syn64")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, -18.5)
+shape = SubResource("BoxShape3D_syn64")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, 18.5)
 shape = SubResource("BoxShape3D_syn64")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -72,11 +123,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_agamo")
 
 [node name="enemies" type="Node3D" parent="."]
 
-[node name="roller" parent="enemies" instance=ExtResource("4_8k0nb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
+[node name="Label" type="Label" parent="."]
+offset_left = 1152.0
+offset_top = 112.0
+offset_right = 2304.0
+offset_bottom = 208.0
+text = "Wave 1"
+label_settings = SubResource("LabelSettings_syn64")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="enemy" parent="enemies" instance=ExtResource("4_bt4xr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -4)
-
-[node name="soldier" parent="enemies" instance=ExtResource("5_bt4xr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4836063, -9.834766e-07, -1.8153791)
+[node name="wave_display" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true

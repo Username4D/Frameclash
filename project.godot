@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Frameclash"
-run/main_scene="uid://crnc3h3kury05"
+run/main_scene="uid://lwh1n733esae"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
 [autoload]
 
 save_handler="*res://scripts/save_handler.gd"
+gameplay_info="*res://scripts/gameplay_info.gd"
 
 [editor_plugins]
 
