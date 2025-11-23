@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b28jk27ltrtq6"]
+
+[ext_resource type="PackedScene" uid="uid://bm0lcqjq0augx" path="res://scenes/enemy.tscn" id="1_q2rr1"]
+[ext_resource type="PackedScene" uid="uid://b2ncaonngc0x8" path="res://assets/soldier.glb" id="2_2oslh"]
+
+[node name="soldier" instance=ExtResource("1_q2rr1")]
+
+[node name="Mesh" parent="." index="2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="soldier2" parent="Mesh" index="0" instance=ExtResource("2_2oslh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="front_shot" type="Marker3D" parent="Mesh" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -2.22)

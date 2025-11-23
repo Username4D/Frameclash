@@ -17,7 +17,6 @@ material = SubResource("StandardMaterial3D_7p1mj")
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3vyb7")
 bullet = ExtResource("2_g2els")
-health = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3vyb7")

@@ -10,7 +10,7 @@ script = ExtResource("2_i6pqb")
 [node name="Mesh" parent="." index="2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.1, 0)
 
-[node name="tanker2" parent="Mesh" index="0" instance=ExtResource("3_7eh81")]
+[node name="tanker" parent="Mesh" index="0" instance=ExtResource("3_7eh81")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="front_shot" type="Marker3D" parent="Mesh" index="1"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://crnc3h3kury05"]
+[gd_scene load_steps=14 format=3 uid="uid://crnc3h3kury05"]
 
 [ext_resource type="PackedScene" uid="uid://dwnj7o6j5hhaf" path="res://scenes/player.tscn" id="1_f05c1"]
 [ext_resource type="Texture2D" uid="uid://byoim7vom3x8w" path="res://icon.svg" id="2_v87wf"]
 [ext_resource type="PackedScene" uid="uid://cxurx5g14168l" path="res://scenes/roller.tscn" id="4_8k0nb"]
 [ext_resource type="PackedScene" uid="uid://c7dll3opvsjw4" path="res://scenes/tanker.tscn" id="4_bt4xr"]
+[ext_resource type="PackedScene" uid="uid://b28jk27ltrtq6" path="res://scenes/soldier.tscn" id="5_bt4xr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8k0nb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,7 +47,6 @@ light_energy = 0.34
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_f05c1")]
-health = 100
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 7
@@ -77,3 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
 
 [node name="enemy" parent="enemies" instance=ExtResource("4_bt4xr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -4)
+
+[node name="soldier" parent="enemies" instance=ExtResource("5_bt4xr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4836063, -9.834766e-07, -1.8153791)
