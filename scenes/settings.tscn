@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0gpidssdvkp4"]
+
+[ext_resource type="PackedScene" uid="uid://dvb3jtscckqy8" path="res://scenes/page.tscn" id="1_5p8wc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6d6q"]
+font_color = Color(1, 1, 0, 1)
+
+[node name="settings" instance=ExtResource("1_5p8wc")]
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 136.0
+text = "Test Pqage"
+label_settings = SubResource("LabelSettings_r6d6q")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -44,3 +44,5 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
 text = "Back"
 script = ExtResource("2_6ni5k")
+
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
