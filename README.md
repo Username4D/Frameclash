@@ -10,7 +10,7 @@ Frameclash was made in Godot 4.5.1.stable, and uses the Compatibility render. It
 
 ## Where can i play this:
 
-[Coming soon...](https://username4ddev.itch.io/frameclash)
+[Here](https://username4ddev.itch.io/frameclash)
 
 ## Licenses:
 
