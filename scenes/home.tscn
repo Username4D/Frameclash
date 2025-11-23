@@ -1,0 +1,312 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxabnp8pndyv8"]
+
+[ext_resource type="Script" uid="uid://dfloeqc5mxddy" path="res://scripts/home.gd" id="1_w18ys"]
+[ext_resource type="Script" uid="uid://bctg1nb6fw0eu" path="res://scripts/page.gd" id="2_u4wd2"]
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="2_w18ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lufvv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkqxg"]
+bg_color = Color(0.96862745, 0.56078434, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g3qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ni5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5g3ik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_reixx"]
+font = ExtResource("2_w18ys")
+font_size = 56
+font_color = Color(0.96862745, 0.56078434, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(6, 6)
+
+[node name="home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w18ys")
+
+[node name="back" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = 488.0
+offset_right = 352.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("2_w18ys")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+text = "Back"
+script = ExtResource("2_u4wd2")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 448.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("2_w18ys")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+text = "Play"
+
+[node name="loadout" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 448.0
+offset_bottom = 352.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("2_w18ys")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+text = "Loadout"
+
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 448.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("2_w18ys")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+text = "Settings"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.9616289, 0.37549517, 0, 1)
+polygon = PackedVector2Array(32, 120, 280, 104, 256, 120, 440, 152, 128, 144, 168, 128)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 192.0
+text = "FRAMECLASH"
+label_settings = SubResource("LabelSettings_reixx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grill" type="Node2D" parent="."]
+position = Vector2(88, 488)
+
+[node name="Polygon2D2" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(384, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D3" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(368, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D4" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(352, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D5" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(336, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D6" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(320, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D7" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(304, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D8" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(288, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D9" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(272, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D10" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(256, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D11" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(240, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D12" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(224, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D13" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(208, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D14" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(192, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D15" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(176, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D16" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(160, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D17" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(144, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D18" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(128, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D19" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(112, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D20" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(96, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D21" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(80, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D22" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(64, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D23" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(48, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D24" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(32, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D25" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(16, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D26" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D27" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(-16, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D28" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(-32, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D29" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(-48, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D30" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(-64, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[node name="Polygon2D31" type="Polygon2D" parent="grill"]
+show_behind_parent = true
+position = Vector2(-80, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(16, 32, 8, 0, 16, 0, 24, 32)
+
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="loadout" to="." method="_on_loadout_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

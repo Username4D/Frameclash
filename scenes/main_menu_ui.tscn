@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://m75qqhuatd0u"]
 
-[ext_resource type="PackedScene" uid="uid://dvb3jtscckqy8" path="res://scenes/page.tscn" id="1_rayio"]
 [ext_resource type="Script" uid="uid://jpu1inrwag42" path="res://scripts/main_menu_ui.gd" id="1_rpghy"]
+[ext_resource type="PackedScene" uid="uid://cxabnp8pndyv8" path="res://scenes/home.tscn" id="3_rpghy"]
 [ext_resource type="PackedScene" uid="uid://c0gpidssdvkp4" path="res://scenes/settings.tscn" id="3_towyk"]
 [ext_resource type="PackedScene" uid="uid://drgn76ab1301d" path="res://scenes/loadout.tscn" id="4_towyk"]
 
@@ -21,15 +21,15 @@ polygon = PackedVector2Array(1216, 24, 616, 72, 736, 128, 608, 272, 680, 280, 64
 
 [node name="pages" type="Node2D" parent="."]
 
-[node name="home" parent="pages" instance=ExtResource("1_rayio")]
+[node name="loadout" parent="pages" instance=ExtResource("4_towyk")]
+offset_left = 1152.0
+offset_right = 1152.0
+
+[node name="home" parent="pages" instance=ExtResource("3_rpghy")]
 offset_left = 640.0
 offset_right = 640.0
 
 [node name="settings" parent="pages" instance=ExtResource("3_towyk")]
-offset_left = 1152.0
-offset_right = 1152.0
-
-[node name="loadout" parent="pages" instance=ExtResource("4_towyk")]
 offset_left = 1152.0
 offset_right = 1152.0
 
