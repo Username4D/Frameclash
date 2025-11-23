@@ -15,6 +15,10 @@ run/main_scene="uid://crnc3h3kury05"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
+[autoload]
+
+save_handler="*res://scripts/save_handler.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdterm/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
