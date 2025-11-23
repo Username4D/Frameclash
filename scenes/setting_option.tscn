@@ -56,3 +56,5 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_uxd7a")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_r0pwg")
 theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 toggle_mode = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

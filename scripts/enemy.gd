@@ -23,7 +23,8 @@ func _physics_process(delta):
 		save_handler.coins += 5
 		save_handler.s_save()
 		health -= 1
-		$"../death_particles".emitting = true
+		if save_handler.settings["particles"]:
+			$"../death_particles".emitting = true
 		self.get_parent().velocity = Vector3(4, 5, 0).rotated(Vector3(0,1,0), randf_range(-PI, PI))
 		self.get_parent().move_and_slide()
 		$"..".set_collision_layer_value(2, true)

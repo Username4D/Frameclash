@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 save_handler="*res://scripts/save_handler.gd"
 gameplay_info="*res://scripts/gameplay_info.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdterm/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
