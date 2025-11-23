@@ -2,9 +2,12 @@ extends CharacterBody3D
 
 const speed = 120
 
+@export var firerate = 0.4
 @export var bullet: PackedScene
 @export var health = 100
 
+var shooting = false
+var can_fire = true
 var ldirection = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if health:
@@ -25,11 +28,23 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, delta * 0.2)
 	velocity.y -= 2 * delta
 	move_and_slide()
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("shoot"):
+	if shooting and can_fire:
 		var nbullet = bullet.instantiate()
 		nbullet.position = self.position
-		
+		can_fire = false
 		nbullet.rotation = $MeshInstance3D.rotation  + Vector3(0,0.5 * PI, 0)
 		self.get_parent().add_child(nbullet)
+		get_tree().create_timer(firerate, true, true).timeout.connect(enable)
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("shoot"):
+		shooting = true
+		print("j")
+	if Input.is_action_just_released("shoot"):
+		print("lol")
+		shooting = false
+		
+	
+
+func enable():
+	print("sh")
+	can_fire = true

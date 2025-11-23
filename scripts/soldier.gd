@@ -11,7 +11,7 @@ func shoot():
 	shot_l.speed = 0.05
 	self.get_parent().get_parent().add_child(shot_l)
 
-	await get_tree().create_timer(0.).timeout.connect(shoot)
+	await get_tree().create_timer(0.65).timeout.connect(shoot)
 
 func _ready() -> void:
 	shoot()
