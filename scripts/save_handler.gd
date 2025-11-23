@@ -19,3 +19,6 @@ func s_save():
 	var content = {"coins": coins, "damage_upgrades": damage_upgrades, "firerate_upgrades": firerate_upgrades, "settings": settings}
 	var file = FileAccess.open("user://einenstern.dat", FileAccess.WRITE)
 	file.store_var(content)
+
+func _ready() -> void:
+	s_load()
