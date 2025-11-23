@@ -14,7 +14,7 @@ func _change_page(target):
 	$Timer.start()
 	while $Timer.time_left != 0:
 		await get_tree().process_frame
-		open_page.position.x = 640 + 512 * $Timer.time_left
+		open_page.position.x = 640 + 512 * $Timer.time_left * 4
 	open_page.position.x = 640
 
 func back():

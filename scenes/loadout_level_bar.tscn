@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqtg6k47w73as"]
+
+[ext_resource type="PackedScene" uid="uid://dgxplphqp2ijv" path="res://scenes/loadout_level_bar_point.tscn" id="1_a68m8"]
+[ext_resource type="Script" uid="uid://dkvgy24y21rx8" path="res://scripts/loadout_level_bar.gd" id="1_yph25"]
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="2_yph25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf2lb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt4eo"]
+bg_color = Color(0.96862745, 0.56078434, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c31kh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osjp8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrym7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne0vj"]
+font = ExtResource("2_yph25")
+font_size = 33
+font_color = Color(0.96862745, 0.56078434, 0, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yph25")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-64, -192)
+color = Color(0.96862745, 0.56078434, 0, 1)
+polygon = PackedVector2Array(32, 248, 56, 304, 360, 304, 360, 248)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(296, 56, 296, 112, 392, 112, 416, 56)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 308.0
+offset_bottom = 112.0
+
+[node name="Control" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control2" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control3" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control4" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control5" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control6" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control7" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control8" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control9" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="Control10" parent="HBoxContainer" instance=ExtResource("1_a68m8")]
+layout_mode = 2
+
+[node name="upgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 392.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_focus_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96862745, 0.56078434, 0, 1)
+theme_override_fonts/font = ExtResource("2_yph25")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kf2lb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dt4eo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c31kh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_osjp8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mrym7")
+text = "Upgrade: 20c"
+alignment = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 64.0
+text = "Firerate:"
+label_settings = SubResource("LabelSettings_ne0vj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://drgn76ab1301d"]
+
+[ext_resource type="PackedScene" uid="uid://dvb3jtscckqy8" path="res://scenes/page.tscn" id="1_ci6c4"]
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="2_dg2ov"]
+[ext_resource type="PackedScene" uid="uid://cqtg6k47w73as" path="res://scenes/loadout_level_bar.tscn" id="3_jid3f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1o8j"]
+font = ExtResource("2_dg2ov")
+font_size = 56
+font_color = Color(0.96862745, 0.56078434, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(6, 6)
+
+[node name="page" instance=ExtResource("1_ci6c4")]
+
+[node name="Polygon2D2" type="Polygon2D" parent="." index="0"]
+position = Vector2(-8, 128)
+color = Color(0.96862745, 0.56078434, 0, 1)
+polygon = PackedVector2Array(32, 248, 56, 304, 360, 304, 360, 248)
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 192.0
+text = "LOADOUT"
+label_settings = SubResource("LabelSettings_g1o8j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" parent="." index="3" instance=ExtResource("3_jid3f")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 64.0
+offset_bottom = 192.0
+state = 1
+
+[node name="Node2D2" parent="." index="4" instance=ExtResource("3_jid3f")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 64.0
+offset_bottom = 320.0
+state = 1
