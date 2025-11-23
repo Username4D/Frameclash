@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://drgn76ab1301d"]
+[gd_scene load_steps=8 format=3 uid="uid://drgn76ab1301d"]
 
 [ext_resource type="PackedScene" uid="uid://dvb3jtscckqy8" path="res://scenes/page.tscn" id="1_ci6c4"]
 [ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="2_dg2ov"]
 [ext_resource type="Script" uid="uid://de2kk31ktw0ni" path="res://scripts/loadout.gd" id="2_jid3f"]
 [ext_resource type="PackedScene" uid="uid://cqtg6k47w73as" path="res://scenes/loadout_level_bar.tscn" id="3_jid3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w18ys"]
+bg_color = Color(1, 0.544, 0.27999997, 0.10980392)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1o8j"]
 font = ExtResource("2_dg2ov")
@@ -20,6 +27,9 @@ font_color = Color(0.96862745, 0.56078434, 0, 1)
 
 [node name="page" instance=ExtResource("1_ci6c4")]
 script = ExtResource("2_jid3f")
+
+[node name="back" parent="." index="0"]
+theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 
 [node name="Label" type="Label" parent="." index="1"]
 layout_mode = 0

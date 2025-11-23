@@ -12,7 +12,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osjp8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrym7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w18ys"]
+bg_color = Color(1, 0.544, 0.27999997, 0.10980392)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_ne0vj"]
 font = ExtResource("2_yph25")
@@ -86,7 +91,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_kf2lb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_a68m8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c31kh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_osjp8")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mrym7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 text = "Upgrade: 20c"
 alignment = 0
 

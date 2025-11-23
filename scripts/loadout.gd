@@ -12,3 +12,6 @@ func _on_update() -> void:
 	save_handler.damage_upgrades = $Damage.state
 	print("update")
 	save_handler.s_save()
+
+func open():
+	$back.grab_focus()

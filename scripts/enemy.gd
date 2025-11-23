@@ -52,7 +52,7 @@ func _physics_process(delta):
 	self.get_parent().get_node("Label").position = own_pos - Vector2(64,64)
 
 func _on_velocity_computed(safe_velocity: Vector3):
-	self.get_parent().velocity = safe_velocity
+	self.get_parent().velocity = safe_velocity - Vector3(0,1,0)
 	self.get_parent().move_and_slide()
 	
 func update_position():

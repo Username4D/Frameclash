@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector3(direction.x * speed * delta, velocity.y, direction.y * -1 * speed * delta)
 		if direction.length_squared() > 0:
 			var target_rotation = direction.angle()# - 0.5 * PI
-			$MeshInstance3D.rotation.y = lerp_angle($MeshInstance3D.rotation.y, target_rotation, 0.2)
+			$MeshInstance3D.rotation.y = lerp_angle($MeshInstance3D.rotation.y, target_rotation, 0.1)
 	elif health == 0:
 		health = -1
 		$death_particles.emitting = true

@@ -12,3 +12,5 @@ func _on_loadout_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	self.get_parent().get_parent()._change_page("settings")
+func open():
+	$play.grab_focus()

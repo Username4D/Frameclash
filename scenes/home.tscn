@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxabnp8pndyv8"]
+[gd_scene load_steps=11 format=3 uid="uid://cxabnp8pndyv8"]
 
 [ext_resource type="Script" uid="uid://dfloeqc5mxddy" path="res://scripts/home.gd" id="1_w18ys"]
 [ext_resource type="Script" uid="uid://bctg1nb6fw0eu" path="res://scripts/page.gd" id="2_u4wd2"]
@@ -18,6 +18,13 @@ corner_radius_bottom_left = 24
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ni5k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5g3ik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w18ys"]
+bg_color = Color(1, 0.544, 0.27999997, 0.10980392)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_reixx"]
 font = ExtResource("2_w18ys")
@@ -71,7 +78,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 text = "Play"
 
 [node name="loadout" type="Button" parent="."]
@@ -89,7 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 text = "Loadout"
 
 [node name="settings" type="Button" parent="."]
@@ -107,7 +114,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_lufvv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kkqxg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1g3qv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ni5k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3ik")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w18ys")
 text = "Settings"
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
