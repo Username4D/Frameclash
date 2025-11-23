@@ -11,7 +11,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if enemy and body.is_in_group("player"):
 		
 		if body.health > 0:
-			body.health -= 1
+			body.health -= 4
 		self.queue_free()
 	if not enemy and body.is_in_group("enemy"):
 		if body.get_node("NavigationAgent3D").health > 0:

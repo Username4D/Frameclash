@@ -3,7 +3,7 @@ extends CharacterBody3D
 const speed = 120
 
 @export var bullet: PackedScene
-@export var health = 10
+@export var health = 100
 
 var ldirection = Vector2.ZERO
 func _physics_process(delta: float) -> void:

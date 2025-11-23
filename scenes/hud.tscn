@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://23mstw1aagns"]
 
-[ext_resource type="Script" uid="uid://bjacrege5mstk" path="res://scenes/hud.gd" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://bjacrege5mstk" path="res://scripts/hud.gd" id="1_ahhtf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toqtt"]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp8ixng0be3k7"]
+
+[ext_resource type="Script" uid="uid://ci55f06ahevhw" path="res://scripts/bomb.gd" id="1_4kkau"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vpdcx"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j15uc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_84slv"]
+radius = 0.1
+
+[node name="bomb" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 4
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_4kkau")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vpdcx")
+surface_material_override/0 = SubResource("StandardMaterial3D_j15uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_84slv")
