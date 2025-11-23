@@ -3,7 +3,10 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	pass # Replace with function body.
+	self.get_parent().get_parent().get_parent().get_parent().blackscreen()
+	await self.get_parent().get_parent().get_parent().get_parent().transition_ended
+	self.get_parent().get_parent().get_parent().get_parent().add_child(load("res://scenes/arena_scene.tscn").instantiate())
+	self.get_parent().get_parent().get_parent().queue_free()
 
 
 func _on_loadout_pressed() -> void:

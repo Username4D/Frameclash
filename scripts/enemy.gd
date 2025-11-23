@@ -20,6 +20,8 @@ func _physics_process(delta):
 		$"../Label".visible = true
 	
 	if health == 0:
+		save_handler.coins += 5
+		save_handler.s_save()
 		health -= 1
 		$"../death_particles".emitting = true
 		self.get_parent().velocity = Vector3(4, 5, 0).rotated(Vector3(0,1,0), randf_range(-PI, PI))
