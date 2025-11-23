@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dndnpc348el8v"]
+
+[ext_resource type="Script" uid="uid://c2n1kt0ndh0si" path="res://scripts/setting_option.gd" id="1_2pp1b"]
+[ext_resource type="FontFile" uid="uid://bnovlpwfj1t3b" path="res://assets/MomoTrustDisplay-Regular.ttf" id="1_m0isk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pp1b"]
+font = ExtResource("1_m0isk")
+font_size = 27
+font_color = Color(0.96862745, 0.56078434, 0, 1)
+
+[node name="setting" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2pp1b")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+text = "SETTINGNAME:"
+label_settings = SubResource("LabelSettings_2pp1b")
+vertical_alignment = 1
+
+[node name="check_bg" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(264, 16, 272, 56, 312, 48, 304, 8)
+
+[node name="check_bg2" type="Polygon2D" parent="."]
+position = Vector2(110.5, 12.5)
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(280, 8, 272, 48, 312, 56, 320, 16)
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+toggle_mode = true
